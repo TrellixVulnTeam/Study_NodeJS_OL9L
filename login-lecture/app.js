@@ -8,6 +8,4 @@ app.set("view engine", "ejs");
 const home = require("./routes/home");
 app.use("/", home);
 
-app.listen(3000, function(){
-    console.log("app 가동")
-});
+module.exports = app;
