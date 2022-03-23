@@ -1,9 +1,6 @@
 "use strict"
 
-const users ={
-    id : ['jw'],
-    password : ["1234"],
-};
+const UserStorage = require("../../models/UserStorage");
 
 const output = {
     home : (req, res)=>{
@@ -20,6 +17,7 @@ const process={
         const id = req.body.id,
         password = req.body.password;
 
+        const users = UserStorage.getusers("id", "password");
         if(users.id.includes(id)){
             const idx = users.id.indexOf(id);
             if(users.password[idx] == password)
